@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Invoices from './Pages/Invoices';
+import Receipt from './Pages/Receipt';
+import Error from './Pages/Error';
+import { GlobalStyle, lightTheme, darkTheme } from './Pages/Styles/themeStyles';
+import { useThemeMode } from './Pages/Styles/useThemeMode';
+import { ThemeProvider } from 'styled-components';
+import NavBar from './Components/NavBar Component/NavBar';
 
 function App() {
+  const [colorTheme, toggleTheme, move] = useThemeMode();
+  const themeMode = colorTheme === 'light' ? lightTheme : darkTheme;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themeMode}>
+      <BrowserRouter>
+        <GlobalStyle />
+        <NavBar colorTheme={colorTheme} toggleTheme={toggleTheme} move={move} />
+        <Routes>
+          <Route path='/' element={<Invoices />}></Route>
+          <Route path='receipt/:receiptId' element={<Receipt />}></Route>
+          <Route path='*' element={<Error />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

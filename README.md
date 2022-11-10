@@ -17,8 +17,7 @@ Users should be able to:
 - Keep track of any changes, even after refreshing the browser 
 
 ### Screenshot
-
-![Screenshot - Invoice App](https://user-images.githubusercontent.com/101146885/201190946-3bb2b883-b147-4e57-a6b3-54cc0e61e4bb.png)
+![Screenshot of -Invoice App](https://user-images.githubusercontent.com/101146885/201192450-08c6e09b-12fc-4806-962e-62e48ab3a0e4.png)
 
 ### Links
 - Live Site URL: [Visit page](https://invoice-app-tarry.vercel.app/)

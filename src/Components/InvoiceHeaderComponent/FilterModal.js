@@ -27,7 +27,7 @@ const FilterModal = ({ query, setQuery }) => {
 
   useEffect(() => {
     handleFilterByStatus();
-  }, [query]);
+  }, [query, handleFilterByStatus]);
 
   // useEffect(() => {
   //   handleFilterStatus(query);

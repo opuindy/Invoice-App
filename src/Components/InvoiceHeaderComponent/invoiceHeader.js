@@ -15,7 +15,6 @@ const InvoiceHeader = () => {
     openIsFiltering,
     toggleFilterModal,
     openFilterModal,
-    closeFilterModal,
     fetchInvoices,
     closeIsFiltering,
   } = useGlobalContext();
